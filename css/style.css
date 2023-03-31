@@ -1,0 +1,1225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: ;
+}
+
+@font-face {
+    src: url(../fonts/Metropolis-SemiBoldItalic.otf);
+    font-family: myFont;
+}
+
+:root {
+    --text-color: #121212;
+    --main-color: #fdbb2e;
+    --background-color: linear-gradient(to right, #fdbb2e, #fdbb2ece);
+}
+
+::selection {
+    background: var(--main-color);
+    color: white;
+}
+
+body {}
+
+.container {
+    width: 75%;
+    margin: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+@keyframes left-animation {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes right-animation {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes title-animation {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    70%,
+    90% {
+        width: 100%;
+    }
+}
+
+
+/* -----------------------------Start header----------------------------- */
+header {
+    background-image: var(--background-color);
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* -----------------------------Start nav----------------------------- */
+header nav {
+    /* background-color: red; */
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+header nav .container .row {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+header nav .container .row .logo a {
+    font-size: 30px;
+    color: var(--text-color);
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+header nav .container .row .list-item {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 50px;
+}
+
+header nav .container .list-item .item a {
+    font-size: 23px;
+    color: var(--text-color);
+    text-transform: capitalize;
+    transition: 1s;
+}
+
+header nav .container .row .list-item .item:hover a,
+header nav .container .row .list-item .item:hover i {
+    color: white;
+}
+
+header nav .container .row .list-item .item i {
+    margin-right: 12px;
+    transition: 1s;
+}
+
+header nav .container .row .list-item .item:hover i {
+    transform: translateX(10px);
+}
+
+/* xxx-----------------------------End nav----------------------------- */
+/* -----------------------------Start header content----------------------------- */
+header .container .header-content {
+    /* background-color: green; */
+    position: relative;
+
+}
+
+header .container .header-content {
+    width: 75%;
+    align-self: center;
+    /* background-color: red; */
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header .container .header-content .header-details {
+    /* background-color: aqua; */
+    animation: left-animation 2s;
+
+}
+
+header .container .header-content .header-details h2 {
+    color: var(--text-color);
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+header .container .header-content .header-details h1 {
+    color: transparent;
+    font-size: 50px;
+    margin-bottom: 10px;
+    /* -webkit-text-stroke: 0.5px black; */
+    position: relative;
+    width: fit-content;
+}
+
+header .container .header-content .header-details h1::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 0;
+    color: var(--text-color);
+    /* -webkit-text-stroke: 0.1px black; */
+    border-right: 3px solid black;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: title-animation 6s linear infinite;
+}
+
+header .container .header-content .header-details .header-icon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
+
+    margin-top: 20px;
+}
+
+header .container .header-content .header-details .header-icon .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: solid 1px var(--text-color);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 1s;
+}
+
+header .container .header-content .header-details .header-icon .icon i {
+    color: var(--text-color);
+}
+
+header .container .header-content .header-details .header-icon .icon:hover i {
+    color: white;
+}
+
+header .container .header-content .header-details .header-icon .icon:hover {
+    border-color: white;
+    width: 45px;
+    height: 45px;
+}
+
+/*header img -------------------------------------------------------------------------- */
+header .container .header-content .header-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 30px black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+
+
+    animation: right-animation 2s;
+}
+
+header .container .header-content .header-image .image {
+    background-image: url("../images/header-img.jfif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 320px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+
+    transition: all 1s;
+    position: relative;
+}
+
+header .container .header-content .header-image .coption {
+
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(173, 173, 173, 0.5);
+
+    position: absolute;
+    left: 105%;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    overflow: hidden;
+
+    transition: all 1s;
+
+    text-transform: capitalize;
+}
+
+header .container .header-content .header-image:hover .coption {
+    left: 0;
+    transform: rotate(360deg);
+}
+
+header .container .header-content .header-image .coption h2 {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+    transition: all 1s 2s;
+}
+
+header .container .header-content .header-image:hover h2 {
+    left: 0;
+}
+
+header .container .header-content .header-image .coption p {
+    font-size: 20px;
+    position: relative;
+    left: 100%;
+    transition: all 1s 1s;
+}
+
+header .container .header-content .header-image:hover p {
+    left: 0;
+}
+
+/* -----------------------------End header content----------------------------- */
+/* -----------------------------End header ----------------------------- */
+
+
+/* -----------------------------Start about section----------------------------- */
+.about-section {
+    padding-bottom: 80px;
+}
+
+.about-section .container .about-title,
+.what-i-do-section .container .what-i-do-title,
+.resume-section .container .resume-title,
+.portfolio-section .container .portfolio-title,
+.client-section .container .client-title,
+.question-section .container .question-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+.about-section .container h2,
+.about-section .container h3,
+.what-i-do-section .container .what-i-do-title h2,
+.what-i-do-section .container .what-i-do-title h3,
+.resume-section .container .resume-title h2,
+.resume-section .container .resume-title h3,
+.portfolio-section .container .portfolio-title h2,
+.portfolio-section .container .portfolio-title h3,
+.client-section .container .client-title h2,
+.client-section .container .client-title h3,
+.question-section .container .question-title h2,
+.question-section .container .question-title h3 {
+    color: var(--text-color);
+    text-transform: capitalize;
+    position: absolute;
+}
+
+.about-section .container h2,
+.what-i-do-section .container .what-i-do-title h2,
+.resume-section .container .resume-title h2,
+.portfolio-section .container .portfolio-title h2,
+.client-section .container .client-title h2,
+.question-section .container .question-title h2 {
+    font-size: 50px;
+    z-index: 10;
+    color: #f1f1f1;
+}
+
+.about-section .container h3,
+.what-i-do-section .container .what-i-do-title h3,
+.resume-section .container .resume-title h3,
+.portfolio-section .container .portfolio-title h3,
+.client-section .container .client-title h3,
+.question-section .container .question-title h3 {
+    font-size: 30px;
+    z-index: 11;
+}
+
+.about-section .container .about-title-para,
+.what-i-do-section .container .what-i-do-title-para,
+.resume-section .container .resume-title-para,
+.portfolio-section .container .portfolio-title-para,
+.client-section .container .client-title-para,
+.question-section .container .question-title-para {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.about-section .container .about-content {
+    /* background-color: aqua; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 30px;
+}
+
+.about-section .container .about-content .about-content-para {
+    width: 800px;
+    /* background-color: red; */
+}
+
+.about-section .container .about-content .first-para {
+    /* background-color: #fdbb2e; */
+    text-transform: capitalize;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.about-section .container .about-content .first-para .first-para-span {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--main-color);
+}
+
+.about-section .container .about-content .second-para {
+    /* background-color: red; */
+    font-size: 22px;
+    line-height: 33px;
+}
+
+.about-section .container .about-content .about-content-logo {
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-section .container .about-content .about-content-logo .about-content-logo-number {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    position: relative;
+
+    margin-bottom: 30px;
+}
+
+.about-section .container .about-content .about-content-logo .about-content-logo-number::before {
+    content: "2";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 180px;
+    font-weight: bold;
+
+    color: #4c4d4d;
+}
+
+.about-section .container .about-content .about-content-logo .about-content-logo-number-para p {
+    text-transform: capitalize;
+    font-size: 25px;
+}
+
+.about-section .container .about-informations {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin-top: 60px;
+    text-transform: capitalize;
+    line-height: 28px;
+}
+
+.about-section .container .about-informations .title {
+    color: #8e9a9d;
+}
+
+.about-section .container .about-informations .info {
+    font-weight: bold;
+}
+
+.about-section .container .about-informations .info a {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+/* -----------------------------End about section----------------------------- */
+
+
+/* -----------------------------Start what-i-do section----------------------------- */
+.what-i-do-section {
+    background-color: #ddd;
+
+}
+
+.what-i-do-section .container .what-i-do-section-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+
+    margin-top: 80px;
+    padding-bottom: 80px;
+}
+
+.what-i-do-section .container .what-i-do-section-items .what-i-do-section-item {
+    /* background-color: red; */
+    text-align: center;
+    width: 350px;
+
+}
+
+.what-i-do-section .container .what-i-do-section-items .what-i-do-section-item i {
+    color: var(--main-color);
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.what-i-do-section .container .what-i-do-section-items .what-i-do-section-item .title-para {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+
+    margin-bottom: 20px;
+}
+
+.what-i-do-section .container .what-i-do-section-items .what-i-do-section-item .description-para {
+    line-height: 30px;
+    color: #6c757d;
+    margin-bottom: 40px;
+}
+
+/* -----------------------------End what-i-do section----------------------------- */
+
+
+/* -----------------------------Start Resume section----------------------------- */
+.resume-section {
+    padding-bottom: 110px;
+}
+
+.resume-section .container .resume-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* background-color: aqua; */
+    padding-bottom: 50px;
+}
+
+.resume-section .container .resume-content .education-content,
+.resume-section .container .resume-content .experience-content {
+    /* background-color: blue; */
+    width: 565px;
+    margin-top: 50px;
+}
+
+.resume-section .container .resume-content .education-content h3,
+.resume-section .container .resume-content .experience-content h3,
+.resume-section .container h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    /* background-color: yellow; */
+}
+
+.resume-section .container .resume-content .education-content .education-box,
+.resume-section .container .resume-content .experience-content .experience-box {
+    border-left: 1px solid var(--main-color);
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 25px;
+}
+
+.resume-section .container .resume-content .education-content .education-details,
+.resume-section .container .resume-content .experience-content .experience-details {
+    /* background-color: green; */
+    padding-bottom: 1px;
+    border-bottom: 1px solid #8e9a9d;
+    margin-bottom: 20px;
+}
+
+.resume-section .container .resume-content .education-content .education-details h4,
+.resume-section .container .resume-content .experience-content .experience-details h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.resume-section .container .resume-content .education-content .education-details h5,
+.resume-section .container .resume-content .experience-content .experience-details h5 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    /* background-color: #6c757d; */
+}
+
+.resume-section .container .resume-content .education-content .education-details p,
+.resume-section .container .resume-content .experience-content .experience-details p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* ------------------------------------------ */
+.resume-section .container .resume-skills .skill .skill-range .outer-range,
+.resume-section .container .resume-skills .skill .skill-range .inner-range {
+    height: 8px;
+    border-radius: 100px;
+    position: absolute;
+}
+
+.resume-section .container .resume-skills .skill .skill-range .outer-range {
+    background-color: var(--main-color);
+    z-index: 100;
+}
+
+.resume-section .container .resume-skills .skill .skill-range .outer-range-1 {
+    width: 90%;
+}
+
+.resume-section .container .resume-skills .skill .skill-range .outer-range-2 {
+    width: 95%;
+}
+
+.resume-section .container .resume-skills .skill .skill-range .outer-range-3 {
+    width: 80%;
+}
+
+.resume-section .container .resume-skills .skill .skill-range .outer-range-4 {
+    width: 70%;
+}
+
+.resume-section .container .resume-skills .skill .skill-range .outer-range-5 {
+    width: 60%;
+}
+
+.resume-section .container .resume-skills .skill .skill-range .outer-range-6 {
+    width: 40%;
+}
+
+.resume-section .container .resume-skills .skill .skill-range .inner-range {
+    width: 100%;
+    z-index: 99;
+    background-color: #ddd;
+}
+
+.resume-section .container .resume-skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 50px;
+
+    /* background-color: red; */
+    margin-top: 30px;
+}
+
+.resume-section .container .resume-skills .skill {
+    width: 540px;
+    position: relative;
+}
+
+.resume-section .container .resume-skills .skill h4 {
+    margin-bottom: 10px;
+}
+
+.resume-section .container .resume-skills .skill:nth-child(1)::after,
+.resume-section .container .resume-skills .skill:nth-child(2)::after,
+.resume-section .container .resume-skills .skill:nth-child(3)::after,
+.resume-section .container .resume-skills .skill:nth-child(4)::after,
+.resume-section .container .resume-skills .skill:nth-child(5)::after,
+.resume-section .container .resume-skills .skill:nth-child(6)::after {
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+
+.resume-section .container .resume-skills .skill:nth-child(1)::after {
+    content: "90%";
+}
+
+.resume-section .container .resume-skills .skill:nth-child(2)::after {
+    content: "95%";
+}
+
+.resume-section .container .resume-skills .skill:nth-child(3)::after {
+    content: "80%";
+}
+
+.resume-section .container .resume-skills .skill:nth-child(4)::after {
+    content: "70%";
+}
+
+.resume-section .container .resume-skills .skill:nth-child(5)::after {
+    content: "60%";
+}
+
+.resume-section .container .resume-skills .skill:nth-child(6)::after {
+    content: "40%";
+}
+
+.resume-section .container .download-button {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.resume-section .container a {
+    padding: 10px 50px;
+    background-color: white;
+    border: 2px solid var(--text-color);
+    color: black;
+    font-weight: bold;
+    margin-bottom: 150px;
+    transition: 1s;
+}
+
+.resume-section .container a:hover {
+    color: white;
+    background-color: #121212;
+}
+
+/* -----------------------------End Resume section----------------------------- */
+
+
+/* -----------------------------Start portfolio section----------------------------- */
+
+.portfolio-section {
+    background-color: #ddd;
+    padding-bottom: 90px;
+}
+
+.portfolio-section .container nav .portfolio-section-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    justify-content: center;
+
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.portfolio-section .container nav .portfolio-section-nav a {
+    color: #6c757d;
+    font-weight: bold;
+    font-size: 17px;
+    position: relative;
+}
+
+.portfolio-section .container nav .portfolio-section-nav a:hover {
+    color: var(--text-color);
+}
+
+.portfolio-section .container nav .portfolio-section-nav a:focus {
+    color: var(--text-color);
+}
+
+.portfolio-section .container nav .portfolio-section-nav a:focus::after {
+
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--main-color);
+    bottom: -3px;
+    left: 0;
+    color: var(--text-color);
+}
+
+/* ------------------------------- */
+.portfolio-section .container .portfolio-items .portfolio-item img {
+    width: 370px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #121212;
+}
+
+.portfolio-section .container .portfolio-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
+
+
+}
+
+.portfolio-section .container .portfolio-items .portfolio-item {
+    position: relative;
+}
+
+.portfolio-section .container .portfolio-items .portfolio-item .overlay {
+    /* background: linear-gradient(to bottom, rgba(92, 77, 66, 0.1) 0%, rgba(92, 77, 66, 0.8) 100%); */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4c4d4d;
+    opacity: 0;
+    border-radius: 10px;
+
+}
+
+.portfolio-section .container .portfolio-items .portfolio-item:hover .overlay {
+    opacity: 0.8;
+
+}
+
+.portfolio-section .container .portfolio-items .portfolio-item .overlay .overlay-content {
+
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.portfolio-section .container .portfolio-items .portfolio-item .overlay .overlay-content i {
+    color: var(--main-color);
+    font-size: 40px;
+    margin-bottom: 20px;
+
+}
+
+.portfolio-section .container .portfolio-items .portfolio-item .overlay .overlay-content .portfolio-main {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 8px;
+
+}
+
+.portfolio-section .container .portfolio-items .portfolio-item .overlay .overlay-content .portfolio-second {
+    color: white;
+    font-size: 15px;
+}
+
+/* -----------------------------End portfolio section----------------------------- */
+
+/* -----------------------------Start intersted section----------------------------- */
+.intersted-section {
+    height: 40vh;
+    background-image: url("../images/portfolioIMG2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.intersted-section .container .overlay {
+    background-color: rgb(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.intersted-section .container .overlay .intersted-content {
+    color: white;
+    text-align: center;
+    opacity: 0.8;
+
+}
+
+.intersted-section .container .overlay .intersted-content .intersted-title {
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.intersted-section .container .overlay .intersted-content a {
+    color: #121212;
+    padding: 15px 60px;
+    background-color: var(--main-color);
+    border: none;
+    transition: 1s;
+}
+
+.intersted-section .container .overlay .intersted-content a:hover {
+    background-color: white;
+    color: var(--main-color);
+}
+
+/* -----------------------------End intersted section----------------------------- */
+
+
+/* -----------------------------Start client section----------------------------- */
+.client-section {
+    padding-bottom: 50px;
+    background-color: #6c757d;
+    color: white;
+}
+
+.client-section .container .client-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 70px;
+    position: relative;
+}
+
+.client-section .container .client-content::after,
+.client-section .container .client-content::before {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+
+    opacity: 0;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.client-section .container .client-content::after {
+    content: "\f0c2";
+
+    right: 230px;
+    top: 20px;
+}
+
+.client-section .container .client-content::before {
+    content: "\f0c3";
+
+    left: 250px;
+    top: 22px;
+}
+
+.client-section .container .client-content:hover::after {
+    opacity: 1;
+}
+
+.client-section .container .client-content:hover:before {
+    opacity: 1;
+}
+
+.client-section .container .client-content .client-q {
+    display: block;
+    width: 50%;
+    margin-bottom: 30px;
+    line-height: 36px;
+    font-size: 20px;
+}
+
+.client-section .container .client-content img {
+    width: 70px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.client-section .container .client-content .client-menus {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10px;
+
+    margin-top: 40px;
+}
+
+.client-section .container .client-content .client-menus .menus {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #121212;
+}
+
+.client-section .container .client-content .client-menus .menus:focus {
+    background-color: var(--main-color);
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+/* -----------------------------End client section----------------------------- */
+
+
+/* -----------------------------Start questions section----------------------------- */
+
+.question-section {
+    /* background-color: red; */
+    padding-bottom: 90px;
+}
+
+.question-section .container .question-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 60px;
+}
+
+.question-section .container .question-content .questions {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    /* background-color: red; */
+    width: 590px;
+
+}
+
+.question-section .container .question-content .questions .question {
+    /* background-color: aqua; */
+    border-bottom: 1px solid #ddd;
+    /* width: 100%; */
+}
+
+.question-section .container .question-content .questions .question details summary {
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+.question-section .container .question-content .questions .question details p {
+    line-height: 25px;
+    margin-left: 25px;
+    /* background-color: red; */
+}
+
+.question-section .container .question-content .question-image img {
+    width: 400px;
+    position: relative;
+    bottom: 30px;
+    /* background-color: aquamarine; */
+}
+
+/* -----------------------------End questions section----------------------------- */
+
+
+/* -----------------------------Start contact section ----------------------------- */
+.contact-section {
+    background-color: var(--main-color);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.contact-section .container .contact-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-section .container .contact-content .contact-information {
+    /* background-color: red; */
+    width: 450px;
+}
+
+.contact-section .container .contact-content .contact-information .contact-information-title,
+.contact-section .container .contact-content .contact-inputs .contact-inputs-title {
+    font-size: 35px;
+    padding-bottom: 50px;
+}
+
+.contact-section .container .contact-content .contact-information .contact-information-para {
+    font-size: 20px;
+    line-height: 36px;
+    padding-bottom: 25px;
+    padding-top: 7px;
+}
+
+.contact-section .container .contact-content .contact-information .contact-information-livingIn,
+.contact-section .container .contact-content .contact-information .contact-information-call {
+    padding-bottom: 22px;
+}
+
+.contact-section .container .contact-content .contact-information .contact-information-living-para,
+.contact-section .container .contact-content .contact-information .contact-information-number {
+    font-size: 20px;
+    padding-bottom: 15px;
+    color: black;
+}
+
+.contact-section .container .contact-content .contact-information .contact-icon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    align-items: center;
+
+    padding-top: 40px;
+}
+
+.contact-section .container .contact-content .contact-information .contact-icon .icon a i {
+    color: #6c757d;
+    font-size: 22px;
+
+    transition: 1s;
+}
+
+.contact-section .container .contact-content .contact-information .contact-icon .icon a i:hover {
+    color: white;
+    font-size: 25px;
+}
+
+/*contact-inputs -------------------------------- */
+.contact-section .container .contact-content .contact-inputs {
+    /* background-color: green; */
+    width: 500px;
+}
+
+.contact-section .container .contact-content .contact-inputs form label {
+    display: block;
+    font-size: 20px;
+    /* padding-bottom: 0px; */
+    margin-top: 10px;
+}
+
+.contact-section .container .contact-content .contact-inputs form input,
+.contact-section .container .contact-content .contact-inputs form textarea {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #6c757d;
+}
+
+.contact-section .container .contact-content .contact-inputs form input:focus,
+.contact-section .container .contact-content .contact-inputs form textarea:focus {
+    outline: none;
+}
+
+.contact-section .container .contact-content .contact-inputs form textarea {
+    height: 90px;
+    margin-bottom: 50px;
+}
+
+.contact-section .container .contact-content .contact-inputs a {
+    padding: 13px 45px;
+    background-color: #252b33;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 1s;
+    box-shadow: 0 0 10px #121212;
+}
+
+.contact-section .container .contact-content .contact-inputs a:hover {
+    background-color: rgb(37, 43, 51, 0.9);
+
+}
+
+.contact-section .container .contact-content .contact-inputs a span {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+/* -----------------------------End contact section ----------------------------- */
+/* Start control section */
+.control .control-content {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(198, 198, 198, 0.9);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 120px;
+    right: 0;
+}
+
+.control .control-content i {
+    color: gray;
+    font-size: 21px;
+}
+
+.control .control-content i:hover {
+    font-size: 24px;
+    color: var(--main-color);
+}
+
+.control .control-content i:active {
+    color: black;
+}
+
+/* End control section */
+
+
+/* -----------------------------Start footer----------------------------- */
+
+footer {
+    background-color: #252b33;
+}
+
+footer .container .footer-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    text-transform: capitalize;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer .container .footer-content span {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+/* -----------------------------End footer ----------------------------- */
