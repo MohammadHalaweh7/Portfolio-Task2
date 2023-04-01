@@ -258,7 +258,7 @@ header .container .header-content .header-image {
 }
 
 header .container .header-content .header-image .image {
-    background-image: url("../images/header-img.jfif");
+    background-image: url("../assets/images/header-img.jfif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 320px;
