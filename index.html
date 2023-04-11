@@ -17,7 +17,7 @@
 
     <!-- Costum Css-->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="assets/css/mediaQuery.css">
+    <link rel="stylesheet" href="css/mediaQuery.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 </head>
 
@@ -49,10 +49,27 @@
                         <li class="item contact"><i class="fa fa-chevron-right" aria-hidden="true"></i> <a
                                 href="#contact">contact</a> </li>
                     </ul>
+                    <div class="toggle-btn">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </div>
 
                 </div>
             </div>
         </nav>
+        <div class="dropdown-menu">
+
+            <li class="item"><i class="fa fa-chevron-right" aria-hidden="true"></i> <a href="#">home</a>
+            </li>
+            <li class="item"><i class="fa fa-chevron-right" aria-hidden="true"></i> <a href="#about">about</a>
+            </li>
+            <li class="item"><i class="fa fa-chevron-right" aria-hidden="true"></i> <a href="#what-i-do">service</a>
+            </li>
+            <li class="item"><i class="fa fa-chevron-right" aria-hidden="true"></i> <a href="#resume">resume</a>
+            </li>
+            <li class="item contact"><i class="fa fa-chevron-right" aria-hidden="true"></i> <a
+                    href="#contact">contact</a> </li>
+
+        </div>
         <!-- End nav -->
         <!-- xxx -->
         <!-- Start header-content -->
@@ -499,7 +516,7 @@
                 <div class="questions">
                     <div class="question">
                         <details>
-                            <summary>What is Callum?</summary>
+                            <summary>About me?</summary>
                             <p>
                                 Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim
                                 iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna imperdiet.
@@ -526,7 +543,7 @@
                     </div>
                     <div class="question">
                         <details>
-                            <summary>Is callum a multi-purpse template?</summary>
+                            <summary>Multi-purpse template?</summary>
                             <p>
                                 Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim
                                 iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna imperdiet.
@@ -635,7 +652,12 @@
     <!------------------------------- Start control section ------------------------------>
     <section class="control">
         <div class="control-content">
-            <a href=""><i class="fa fa-cog fa-spin" aria-hidden="true"></i></a>
+            <i class="fa fa-cog fa-spin" aria-hidden="true"></i>
+        </div>
+        <div class="theam-box">
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+            <div class="box box3"></div>
         </div>
     </section>
     <!------------------------------- End control section -------------------------------->
@@ -645,7 +667,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p class="first-para"> Copyright &copy; 2023 <span>Callum</span>. All Rights Reserved.</p>
+                <p class="first-para"> Copyright &copy; 2023 <span>Halaweh</span>. All Rights Reserved.</p>
                 <p class="second-para">Designed by <span>Mohammad Halaweh</span></p>
             </div>
         </div>
@@ -656,6 +678,46 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+
+        // Code for nav bar
+        const toggleBtn = document.querySelector(".toggle-btn");
+        const toggleBtnIcon = document.querySelector(".toggle-btn i");
+        const dropDownMenu = document.querySelector(".dropdown-menu");
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle("dropdown-open");
+            const isOpen = dropDownMenu.classList.contains("dropdown-open");
+
+            toggleBtnIcon.classList = isOpen ? "fa fa-times" : "fa fa-bars"
+        }
+        // Code for control button
+        const controlBtn = document.querySelector(".control-content");
+        const theamBox = document.querySelector(".theam-box");
+        controlBtn.onclick = function () {
+            theamBox.classList.toggle("theam-box-open");
+
+        }
+
+        const box1Btn = document.querySelector(".box1");
+        const box2Btn = document.querySelector(".box2");
+        const box3Btn = document.querySelector(".box3");
+
+        box1Btn.onclick = function () {
+            document.body.classList.add("aqua-theme");
+            document.body.classList.remove("orange-theme");
+            document.body.classList.remove("green-theme");
+        }
+        box2Btn.onclick = function () {
+            document.body.classList.add("orange-theme");
+            document.body.classList.remove("aqua-theme");
+            document.body.classList.remove("green-theme");
+        }
+        box3Btn.onclick = function () {
+            document.body.classList.add("green-theme");
+            document.body.classList.remove("orange-theme");
+            document.body.classList.remove("aqua-theme");
+        }
+
     </script>
 </body>
 

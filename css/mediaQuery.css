@@ -1,37 +1,31 @@
 /* header section---------------------------------------------------------------- */
 @media (max-width:481px) {
+
+    html,
     body {
         overflow-x: hidden;
-
     }
 
-    header nav {
-        position: static;
-    }
 
-    header nav .container .row {
-        /* background-color: blue; */
-        flex-direction: column;
-        align-items: start;
-        row-gap: 30px;
-    }
-
-    header nav .container .row .logo {
-        /* background-color: aqua; */
-        margin: auto;
-    }
-
+    /* Start Toggle nav */
     header nav .container .row .list-item {
-        /* background-color: aqua; */
-        flex-direction: column;
+        display: none;
     }
 
-    header nav .container .row .list-item .item {
-        /* background-color: green; */
-        font-size: 20px;
+    header nav .container .row .toggle-btn {
+        display: block;
     }
 
-    header nav .container .list-item .item a {
+    header .dropdown-menu {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+    }
+
+    /* end Toggle nav */
+
+
+    header nav .container .row .logo a {
         font-size: 20px;
     }
 
@@ -43,26 +37,26 @@
     }
 
     header .container .header-content .header-details h2 {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     header .container .header-content .header-details h1 {
-        font-size: 27px;
+        font-size: 22px;
     }
 
     /*header img -------------------------------------------------------------------------- */
     header .container .header-content .header-image {
-        width: 180px;
-        height: 180px;
+        width: 210px;
+        height: 210px;
         margin: auto;
         position: relative;
-        bottom: 120px;
+        bottom: 220px;
     }
 
     header .container .header-content .header-image .image {
-        background-size: 150px;
-        width: 150px;
-        height: 150px;
+        background-size: 180px;
+        width: 180px;
+        height: 180px;
     }
 
     header .container .header-content .header-image .coption h2 {
@@ -76,7 +70,6 @@
     header .container .header-content .header-details .header-icon .icon {
         width: 20px;
         height: 20px;
-
     }
 
     header .container .header-content .header-details .header-icon .icon i {
@@ -89,36 +82,23 @@
         overflow-x: hidden;
     }
 
-    header nav {
-        /* background-color: red; */
-        position: relative;
-    }
-
-    header nav .container .row {
-        /* background-color: blue; */
-        flex-direction: column;
-        align-items: start;
-        row-gap: 30px;
-    }
-
-    header nav .container .row .logo {
-        /* background-color: aqua; */
-        margin: auto;
-    }
-
+    /* Start Toggle nav */
     header nav .container .row .list-item {
-        /* background-color: aqua; */
-        flex-direction: column;
+        display: none;
     }
 
-    header nav .container .row .list-item .item {
-        /* background-color: green; */
-        font-size: 20px;
+    header nav .container .row .toggle-btn {
+        display: block;
     }
 
-    header nav .container .list-item .item a {
-        font-size: 20px;
+    header .dropdown-menu {
+        display: block;
+        position: absolute;
+        z-index: 9999;
     }
+
+    /* end Toggle nav */
+
 
     header .container .header-content {
         /* background-color: yellow; */
@@ -132,7 +112,7 @@
         /* background-color: aqua; */
         justify-content: center;
         position: relative;
-        top: 360px;
+        top: 320px;
     }
 
     header .container .header-content .header-details h2 {
@@ -153,7 +133,7 @@
         height: 280px;
         margin: auto;
         position: relative;
-        bottom: 200px;
+        bottom: 320px;
     }
 
     header .container .header-content .header-image .image {
@@ -176,35 +156,23 @@
         overflow-x: hidden;
     }
 
-    header nav {
-        position: static;
-    }
-
-    header nav .container .row {
-        /* background-color: blue; */
-        flex-direction: column;
-        align-items: start;
-        row-gap: 30px;
-    }
-
-    header nav .container .row .logo {
-        /* background-color: aqua; */
-        margin: auto;
-    }
-
+    /* Start Toggle nav */
     header nav .container .row .list-item {
-        /* background-color: aqua; */
-        margin: auto;
+        display: none;
     }
 
-    header nav .container .row .list-item .item {
-        /* background-color: green; */
-        font-size: 15px;
+    header nav .container .row .toggle-btn {
+        display: block;
     }
 
-    header nav .container .list-item .item a {
-        font-size: 17px;
+    header .dropdown-menu {
+        display: block;
+        position: absolute;
+        z-index: 9999;
     }
+
+    /* end Toggle nav */
+
 
     header .container .header-content .header-details {
         position: relative;
@@ -222,17 +190,17 @@
     /*header img -------------------------------------------------------------------------- */
     header .container .header-content .header-image {
         position: relative;
-        bottom: 160px;
+        bottom: 220px;
 
-        width: 350px;
-        height: 350px;
+        width: 300px;
+        height: 300px;
         margin: auto;
     }
 
     header .container .header-content .header-image .image {
-        background-size: 320px;
-        width: 320px;
-        height: 320px;
+        background-size: 270px;
+        width: 270px;
+        height: 270px;
     }
 
     header .container .header-content .header-image .coption h2 {
@@ -534,7 +502,7 @@
     }
 }
 
-@media (min-width:769px) and (max-width:1279px) {
+@media (min-width:769px) and (max-width:1338px) {
     .question-section .container .question-content img {
         display: none;
     }

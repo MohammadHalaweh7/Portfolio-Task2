@@ -5,7 +5,7 @@
 }
 
 @font-face {
-    src: url(../fonts/Metropolis-SemiBoldItalic.otf);
+    src: url(../assets/fonts/Cairo-VariableFont_slnt\,wght.ttf);
     font-family: myFont;
 }
 
@@ -20,7 +20,25 @@
     color: white;
 }
 
-body {}
+.aqua-theme {
+    --main-color: aqua;
+    --background-color: linear-gradient(to right, aqua, aqua);
+    ;
+}
+
+.orange-theme {
+    --main-color: #fdbb2e;
+    --background-color: linear-gradient(to right, #fdbb2e, #fdbb2ece);
+}
+
+.green-theme {
+    --main-color: rgb(112, 196, 112);
+    --background-color: linear-gradient(to right, rgb(112, 196, 112), rgb(112, 196, 112));
+}
+
+body {
+    font-family: myFont;
+}
 
 .container {
     width: 75%;
@@ -110,6 +128,47 @@ header nav .container .row .logo a {
     font-weight: bold;
 }
 
+header nav .container .row .toggle-btn {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 2rem;
+
+
+}
+
+
+/* **********************dropdown menu*********************** */
+header .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 90px;
+    width: 330px;
+    height: 0;
+    background-color: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .2s;
+    margin: auto;
+}
+
+header .dropdown-open {
+    height: 330px;
+}
+
+header .dropdown-menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 header nav .container .row .list-item {
     /* background-color: red; */
     display: flex;
@@ -118,24 +177,29 @@ header nav .container .row .list-item {
     column-gap: 50px;
 }
 
-header nav .container .list-item .item a {
+header nav .container .list-item .item a,
+header .dropdown-menu li a {
     font-size: 23px;
     color: var(--text-color);
     text-transform: capitalize;
-    transition: 1s;
+    transition: 0.2s;
 }
 
 header nav .container .row .list-item .item:hover a,
-header nav .container .row .list-item .item:hover i {
+header nav .container .row .list-item .item:hover i,
+header .dropdown-menu li:hover i,
+header .dropdown-menu li:hover a {
     color: white;
 }
 
-header nav .container .row .list-item .item i {
+header nav .container .row .list-item .item i,
+header .dropdown-menu li i {
     margin-right: 12px;
-    transition: 1s;
+    transition: 0.2s;
 }
 
-header nav .container .row .list-item .item:hover i {
+header nav .container .row .list-item .item:hover i,
+header .dropdown-menu li:hover i {
     transform: translateX(10px);
 }
 
@@ -221,7 +285,7 @@ header .container .header-content .header-details .header-icon .icon {
     justify-content: center;
     align-items: center;
 
-    transition: 1s;
+    transition: 0.5s;
 }
 
 header .container .header-content .header-details .header-icon .icon i {
@@ -230,6 +294,7 @@ header .container .header-content .header-details .header-icon .icon i {
 
 header .container .header-content .header-details .header-icon .icon:hover i {
     color: white;
+    transition: 0.5s;
 }
 
 header .container .header-content .header-details .header-icon .icon:hover {
@@ -804,6 +869,7 @@ header .container .header-content .header-image:hover p {
     opacity: 0;
     border-radius: 10px;
 
+    transition: 1s;
 }
 
 .portfolio-section .container .portfolio-items .portfolio-item:hover .overlay {
@@ -845,7 +911,7 @@ header .container .header-content .header-image:hover p {
 /* -----------------------------Start intersted section----------------------------- */
 .intersted-section {
     height: 40vh;
-    background-image: url("../images/portfolioIMG2.jpg");
+    background-image: url("../assets/images/portfolioIMG2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -912,7 +978,8 @@ header .container .header-content .header-image:hover p {
     position: relative;
 }
 
-.client-section .container .client-content::after,
+/* to button on left and right the para */
+/* .client-section .container .client-content::after,
 .client-section .container .client-content::before {
     position: absolute;
     width: 40px;
@@ -946,7 +1013,7 @@ header .container .header-content .header-image:hover p {
 
 .client-section .container .client-content:hover:before {
     opacity: 1;
-}
+} */
 
 .client-section .container .client-content .client-q {
     display: block;
@@ -1019,10 +1086,24 @@ header .container .header-content .header-image:hover p {
     /* width: 100%; */
 }
 
+.question-section .container .question-content .questions .question details {
+    transition: height 1.3s ease;
+    overflow: hidden;
+}
+
+.question-section .container .question-content .questions .question details:not([open]) {
+    height: 3em;
+}
+
+.question-section .container .question-content .questions .question details[open] {
+    height: 11em;
+}
+
 .question-section .container .question-content .questions .question details summary {
     font-weight: bold;
     font-size: 20px;
     padding-bottom: 15px;
+    cursor: pointer;
 }
 
 .question-section .container .question-content .questions .question details p {
@@ -1099,7 +1180,7 @@ header .container .header-content .header-image:hover p {
     color: #6c757d;
     font-size: 22px;
 
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .contact-section .container .contact-content .contact-information .contact-icon .icon a i:hover {
@@ -1150,7 +1231,8 @@ header .container .header-content .header-image:hover p {
 }
 
 .contact-section .container .contact-content .contact-inputs a:hover {
-    background-color: rgb(37, 43, 51, 0.9);
+    background-color: rgba(213, 215, 217, 0.9);
+    color: #121212;
 
 }
 
@@ -1166,8 +1248,6 @@ header .container .header-content .header-image:hover p {
     height: 40px;
     background-color: white;
     box-shadow: 0 0 15px rgba(198, 198, 198, 0.9);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
     position: relative;
 
     display: flex;
@@ -1192,6 +1272,52 @@ header .container .header-content .header-image:hover p {
 .control .control-content i:active {
     color: black;
 }
+
+/* Start theam box */
+.control .theam-box {
+
+    position: fixed;
+    right: 2.5rem;
+    top: 120px;
+    width: 0px;
+    height: 40px;
+    background-color: rgb(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    transition: .8s;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.control .theam-box-open {
+    width: 220px;
+}
+
+.control .theam-box .box {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 3px black;
+}
+
+.control .theam-box .box1 {
+    background-color: aqua;
+}
+
+.control .theam-box .box2 {
+    background-color: #fdbb2e;
+}
+
+.control .theam-box .box3 {
+    background-color: rgb(112, 196, 112);
+}
+
+/* End theam box */
 
 /* End control section */
 
